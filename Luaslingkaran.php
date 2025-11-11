@@ -1,13 +1,27 @@
 <?php
-class luaslingkaran{
+namespace app\math;
+
+class Luaslingkaran {
 
     public const phi = 3.14;
-    public int $jari;
+    private int $jari;
+
+    public function __construct($isijari = 1){
+        $this->jari = $isijari;
+    }
+
+    public function tampil($nama ='ban') {
+        $rumus = self::phi * $this->jari * $this->jari;
+        echo "Lingkaran {$nama} hasilnya adalah : {$rumus}";
+    }
+
+    public static function testing() {
+        echo "<br/>";
+        echo "ini dari static";
+    }
+
+    public function __destruct() {
+        echo "<br/>";
+        echo "yes king";
+    }
 }
-
-$lingkaran = new luaslingkaran();
-$lingkaran ->jari =7;
-
-$rumus = luaslingkaran::phi* $lingkaran->jari*$lingkaran->jari;
-
-echo "hasilnya adalah". $rumus;
